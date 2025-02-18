@@ -90,7 +90,7 @@ Fan Hu¹, **Weihong Zhang**¹, Huazhen Huang, Wang Li, Yang Li, Peng Yin
 </div>
 </div>
 
-- ``ISBRA 2024`` [A Transferability-guided Protein-ligand Interaction Prediction Method](), **Weihong Zhang**, Fan Hu, Peng Yin, Yunpeng Cai. In ISBRA 2024, Kunming, China.
+- ``ISBRA 2024`` [A Transferability-guided Protein-ligand Interaction Prediction Method](https://bio.csu.edu.cn/ISBRA2024/ISBRA2024_files/ISBRA2024_Schedule.pdf), **Weihong Zhang**, Fan Hu, Peng Yin, Yunpeng Cai. In ISBRA 2024, Kunming, China.
 - ``Invention Pattern`` [An Evaluation Method and System for Protein Representation Learning Based on Quantitative Transferability (一种基于可迁移性定量的蛋白质表示学习评估方法及系统)](http://epub.cnipa.gov.cn/patent/CN117637034A), Fan Hu, **Weihong Zhang**, Peng Yin. CN117637034A. 2024.03.01.
 
 
