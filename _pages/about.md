@@ -19,7 +19,7 @@ redirect_from:
 
 I am currently work at [Huawei Technolgies](https://www.huawei.com/) as an AI engineer in Shanghai, China. My work focuses on the intelligent automated evaluation of Large Language Models (LLMs). I will become a PhD candidate at [School of Software and Microelectronics](https://www.ss.pku.edu.cn/), Peking University (北京大学软件与微电子学院) in the fall semester of 2025. My research interest includes LLMs, multimodality learning, representation learning, and transferability.
 
-I graduated from the [University of Chinese Academy of Sciences](https://www.ucas.ac.cn/) (中国科学院大学) with a Master's degree in Computer Technology, advised by [Yunpeng Cai (蔡云鹏)](https://people.ucas.edu.cn/~caiyunpeng). I earned my bachelor’s degree at [College of Electronics and Information Engineering](https://ceie.szu.edu.cn/), Shenzhen University.
+I graduated from the [University of Chinese Academy of Sciences](https://www.ucas.ac.cn/) (中国科学院大学) with a Master's degree in Computer Technology, advised by [Yunpeng Cai](https://people.ucas.edu.cn/~caiyunpeng). I earned my bachelor’s degree at [College of Electronics and Information Engineering](https://ceie.szu.edu.cn/), Shenzhen University.
 
 As the first or co-first author, I have published four articles in top-tier journals or JCR Q1-ranked journals with total <a href='https://scholar.google.com/citations?user=P7wwiSMAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. I have also presented a conference paper and published an invention patent.
 
@@ -112,7 +112,7 @@ Fan Hu, **Weihong Zhang**, Peng Yin
 - *2018.10*: National Endeavor Scholarship.
 
 # 📖 Educations
-- *2025.09 - *: PhD Candidate, School of Software and Microelectronics, Peking University <img src='./images/pku_words.png' style='width: 6em;'>.
+- *2025.09 -*: PhD Candidate, School of Software and Microelectronics, Peking University <img src='./images/pku_words.png' style='width: 6em;'>.
 - *2021.09 - 2024.06*: Master, Shenzhen Institutes of Advanced Technology (SIAT), University of Chinese Academy of Sciences <img src='./images/ucas_words.png' style='width: 6em;'>.
 - *2017.07 - 2021.06*: Bachelor, College of Electronics and Information Engineering, Shenzhen University <img src='./images/szu_words.png' style='width: 6em;'>.
 
@@ -120,5 +120,5 @@ Fan Hu, **Weihong Zhang**, Peng Yin
 - *2024.07*: The 20th International Symposium on Bioinformatics Research and Application (ISBRA 2024), Oral, Kunming, China.
 
 # 💻 Internships
-- *2024.07 - present*: <a href="https://www.huawei.com/"><img src='./images/huawei.png' width="23pt"> AI Engineer, Huawei Technologies Co., Ltd., Shanghai, China.
-- *2021.06 - 2021.08*: <a href="https://www.siat.ac.cn/"><img src='./images/siat.jpeg' width="23pt"> Research Intern, SIAT, Chinese Academy of Sciences, Shenzhen, China.
+- *2024.07 - present*: <a href="https://www.huawei.com/"><img src='./images/huawei.png' width="23pt"></a> AI Engineer, Huawei Technologies Co., Ltd., Shanghai, China.
+- *2021.06 - 2021.08*: <a href="https://www.siat.ac.cn/"><img src='./images/siat.jpeg' width="23pt"></a> Research Intern, SIAT, Chinese Academy of Sciences, Shenzhen, China.
