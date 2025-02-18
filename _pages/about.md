@@ -25,7 +25,7 @@ As the first or co-first author, I have published four articles in top-tier jour
 
 
 # 🔥 News
-- *2025.02*: &nbsp;🎉🎉 My paper [A transferability-guided protein-ligand interaction prediction method](https://doi.org/10.1016/j.ymeth.2025.01.019) is accepted by *Methods*.
+- *2025.02*: &nbsp;🎉🎉 My paper [A Transferability-guided Protein-ligand Interaction Prediction Method](https://doi.org/10.1016/j.ymeth.2025.01.019) is accepted by *Methods*.
 - *2025.01*: &nbsp;🎉🎉 I have been admitted as a PhD student to the School of Software and Microelectronics, Peking University <img src='./images/pku_ss_logo.png' style='width: 6em;'>.
 
 # 📝 Publications 
@@ -36,20 +36,63 @@ As the first or co-first author, I have published four articles in top-tier jour
 [A Multimodal Protein Representation Framework for Quantifying Transferability Across Biochemical Downstream Tasks](https://doi.org/10.1002/advs.202301223)
 
 Fan Hu¹, Yishen Hu¹, **Weihong Zhang**¹, Huazhen Huang, Yi Pan, and Peng Yin
+> ¹: These authors contributed equally to this work (the same applies hereafter).
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=P7wwiSMAAAAJ&citation_for_view=P7wwiSMAAAAJ:u5HHmVD_uO8C) <strong><span class='show_paper_citations' data='P7wwiSMAAAAJ:u5HHmVD_uO8C'></span></strong>
+[**GitHub Repository**](https://github.com/SIAT-code/MASSA)
+- A SOTA multimodal deep learning framework for incorporating ≈1 million protein sequence, structure, and functional annotation (MASSA). A novel optimal-transport-based metric with rich geometry awareness is introduced to quantify the dynamic transferability from the pretrained representation to the related downstream tasks, which provides a panoramic view of the step-by-step learning process.
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">JBHI</div><img src='images/JBHI_2024.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[A Transferability-Based Method for Evaluating the Protein Representation Learning](https://doi.org/10.1109/JBHI.2024.3370680)
+
+Fan Hu¹, **Weihong Zhang**¹, Huazhen Huang, Wang Li, Yang Li, Peng Yin
+
+[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=P7wwiSMAAAAJ&citation_for_view=P7wwiSMAAAAJ:9yKSN-GCB0IC) <strong><span class='show_paper_citations' data='P7wwiSMAAAAJ:9yKSN-GCB0IC'></span></strong>
+[**GitHub Repository**](https://github.com/SIAT-code/OTMTD)
+- A novel quantitative approach for estimating the performance of transferring multi-task pre-trained protein representations to downstream tasks. This transferability-based method is designed to quantify the similarities in latent space distributions between pre-trained features and those fine-tuned for downstream tasks. It encompasses a broad spectrum, covering multiple domains and a variety of heterogeneous tasks. Our experimental results demonstrate a robust correlation between the transferability scores obtained using our method and the actual transfer performance observed.
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">JBHI</div><img src='images/Methods_2023.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Does Protein Pretrained Language Model Facilitate the Prediction of Protein–ligand Interaction?](https://doi.org/10.1016/j.ymeth.2023.08.016)
+
+**Weihong Zhang**, Fan Hu, Wang Li, Peng Yin
+
+[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=P7wwiSMAAAAJ&citation_for_view=P7wwiSMAAAAJ:u-x6o8ySG0sC) <strong><span class='show_paper_citations' data='P7wwiSMAAAAJ:u-x6o8ySG0sC'></span></strong>
+[**GitHub Repository**](https://github.com/brian-zZZ/PLM-PLI)
+- An approach that quantitatively evaluates the impact of protein pretrained language model (PLM) in protein–ligand interaction (PLI) predictions, which allows us to select the optimal PLM for a given downstream task without exhaustively testing each PLM, thus avoiding the costly computational expense. The mechanisms underlying the influence of protein PLMs on PLI tasks are explored. Our observations suggest that pre-training serves as a process of embedding prior knowledge, as evidenced by the increased distinctiveness of feature distributions among different tasks after pre-training.
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Methods</div><img src='images/Methods_2025.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[A Transferability-guided Protein-ligand Interaction Prediction Method](https://doi.org/10.1016/j.ymeth.2025.01.019)
+
+**Weihong Zhang**, Fan Hu, Peng Yin, Yunpeng Cai
+
+[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=P7wwiSMAAAAJ&citation_for_view=P7wwiSMAAAAJ:2osOgNQ5qMEC) <strong><span class='show_paper_citations' data='P7wwiSMAAAAJ:2osOgNQ5qMEC'></span></strong>
+[**GitHub Repository**](https://github.com/brian-zZZ/Guided-PLI)
+- A novel transferability-guided PLI prediction method that maximizes knowledge transfer by deeply integrating protein and ligand representations through a cross-attention mechanism and incorporating transferability metrics to guide fine-tuning. The transferability-guided strategy quantifies transferability from pretraining tasks and incorporates it into the training objective, ensuring the effective utilization of beneficial knowledge while mitigating negative transfer. This strategy provides a paradigm for more comprehensive utilization of pretraining knowledge.
+</div>
+</div>
+
 
 # 🎖 Honors and Awards
 - *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2025.09 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 
 # 💬 Invited Talks
