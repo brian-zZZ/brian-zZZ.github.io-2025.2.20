@@ -410,3 +410,21 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+.footer_site{
+  padding-top: 12em;
+  align-items: center;
+}
+
+hr {
+  width: 70%;
+  margin: auto;
+}
+
+.footer_copyright{
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
