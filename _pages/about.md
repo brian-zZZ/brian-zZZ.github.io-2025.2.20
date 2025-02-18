@@ -28,6 +28,13 @@ As the first or co-first author, I have published four articles in top-tier jour
 - *2025.02*: &nbsp;🎉🎉 My paper [A Transferability-guided Protein-ligand Interaction Prediction Method](https://doi.org/10.1016/j.ymeth.2025.01.019) is accepted by *Methods*.
 - *2025.01*: &nbsp;🎉🎉 I have been admitted as a PhD student to the School of Software and Microelectronics, Peking University <img src='./images/pku_ss_logo.png' style='width: 6em;'>.
 
+
+# 📖 Educations
+- *2025.09 -*: PhD Candidate, School of Software and Microelectronics, Peking University <img src='./images/pku_words.png' style='width: 6em;'>.
+- *2021.09 - 2024.06*: Master, Shenzhen Institutes of Advanced Technology (SIAT), University of Chinese Academy of Sciences <img src='./images/ucas_words.png' style='width: 6em;'>.
+- *2017.07 - 2021.06*: Bachelor, College of Electronics and Information Engineering, Shenzhen University <img src='./images/szu_words.png' style='width: 6em;'>.
+
+
 # 📝 Publications 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Advanced Science</div><img src='images/Adv.Sci._2023.jpg' alt="sym" width="100%"></div></div>
@@ -96,6 +103,14 @@ Fan Hu, **Weihong Zhang**, Peng Yin
 </div>
 
 
+# 🗣 Conferences
+- *2024.07*: The 20th International Symposium on Bioinformatics Research and Application (ISBRA 2024), Oral, Kunming, China.
+
+
+# 💻 Internships
+- *2024.07 - present*: <a href="https://www.huawei.com/"><img src='./images/huawei.png' width="23pt"></a> AI Engineer, Huawei Technologies Co., Ltd., Shanghai, China.
+- *2021.06 - 2021.08*: <a href="https://www.siat.ac.cn/"><img src='./images/siat.jpeg' width="23pt"></a> Research Intern, SIAT, Chinese Academy of Sciences, Shenzhen, China.
+
 
 # 🎖 Honors and Awards
 - *2024.07*: Merit Student of University of Chinese Academy of Sciences.
@@ -110,15 +125,3 @@ Fan Hu, **Weihong Zhang**, Peng Yin
 - *2019.06*: Outstanding Volunteer Officer of Shenzhen University.
 - *2018.12*: Shenzhen University Public Service Star Scholarship.
 - *2018.10*: National Endeavor Scholarship.
-
-# 📖 Educations
-- *2025.09 -*: PhD Candidate, School of Software and Microelectronics, Peking University <img src='./images/pku_words.png' style='width: 6em;'>.
-- *2021.09 - 2024.06*: Master, Shenzhen Institutes of Advanced Technology (SIAT), University of Chinese Academy of Sciences <img src='./images/ucas_words.png' style='width: 6em;'>.
-- *2017.07 - 2021.06*: Bachelor, College of Electronics and Information Engineering, Shenzhen University <img src='./images/szu_words.png' style='width: 6em;'>.
-
-# 💬 Conferences
-- *2024.07*: The 20th International Symposium on Bioinformatics Research and Application (ISBRA 2024), Oral, Kunming, China.
-
-# 💻 Internships
-- *2024.07 - present*: <a href="https://www.huawei.com/"><img src='./images/huawei.png' width="23pt"></a> AI Engineer, Huawei Technologies Co., Ltd., Shanghai, China.
-- *2021.06 - 2021.08*: <a href="https://www.siat.ac.cn/"><img src='./images/siat.jpeg' width="23pt"></a> Research Intern, SIAT, Chinese Academy of Sciences, Shenzhen, China.
