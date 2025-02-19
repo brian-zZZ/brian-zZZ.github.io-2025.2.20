@@ -118,4 +118,4 @@ Fan Hu¹, **Weihong Zhang**¹, Huazhen Huang, Wang Li, Yang Li, Peng Yin
 - *2018.10*: National Endeavor Scholarship.
 
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=KKVQwhlxW3eaKbtrI8kx7IgDAyBI9TlARuKNBXIu9g0'></script>
-<!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=KKVQwhlxW3eaKbtrI8kx7IgDAyBI9TlARuKNBXIu9g0&cl=ffffff&w=a"></script> -->
+<!-- <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=KKVQwhlxW3eaKbtrI8kx7IgDAyBI9TlARuKNBXIu9g0&cl=ffffff&w=600"></script> -->
