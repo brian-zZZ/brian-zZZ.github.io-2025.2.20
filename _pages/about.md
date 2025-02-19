@@ -90,8 +90,16 @@ Fan Hu¹, **Weihong Zhang**¹, Huazhen Huang, Wang Li, Yang Li, Peng Yin
 </div>
 </div>
 
-- ``ISBRA 2024`` [A Transferability-guided Protein-ligand Interaction Prediction Method](https://bio.csu.edu.cn/ISBRA2024/ISBRA2024_files/ISBRA2024_Schedule.pdf), **Weihong Zhang**, Fan Hu, Peng Yin, Yunpeng Cai. In ISBRA 2024, Kunming, China.
-- ``Invention Pattern`` [An Evaluation Method and System for Protein Representation Learning Based on Quantitative Transferability (一种基于可迁移性定量的蛋白质表示学习评估方法及系统)](http://epub.cnipa.gov.cn/patent/CN117637034A), Fan Hu, **Weihong Zhang**, Peng Yin. CN117637034A. 2024.03.01.
+
+- <span class='paper-badge'>ISBRA 2024</span> **A Transferability-guided Protein-ligand Interaction Prediction Method**<br>
+  _<u><b>Weihong Zhang</b></u>, Fan Hu, Peng Yin, Yunpeng Cai_<br>
+  _The 20th International Symposium on Bioinformatics Research and Application_, 2024 (CCF-C)<br>
+  <span class='paper-asset'><a href="https://doi.org/10.1016/j.ymeth.2025.01.019">Page</a></span> <span class='paper-asset'><a href="https://bio.csu.edu.cn/ISBRA2024/ISBRA2024_files/ISBRA2024_Schedule.pdf">PDF</a></span> <span class='paper-asset'><a href="https://github.com/brian-zZZ/Guided-PLI">Code</a></span>
+
+- <span class='paper-badge'>Invention Pattern</span> **An Evaluation Method and System for Protein Representation Learning Based on Quantitative Transferability (一种基于可迁移性定量的蛋白质表示学习评估方法及系统)**<br>
+  _Fan Hu, <u><b>Weihong Zhang</b></u>, Peng Yin_<br>
+  _China Invention Pattern, CN117637034A_, 2024<br>
+  <span class='paper-asset'><a href="http://epub.cnipa.gov.cn/patent/CN117637034A">Page</a></span>
 
 
 # 🗣 Conferences
