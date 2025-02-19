@@ -90,6 +90,7 @@ Fan Hu¹, **Weihong Zhang**¹, Huazhen Huang, Wang Li, Yang Li, Peng Yin
 </div>
 </div>
 
+# 📝 Publication List
 
 - <span class='paper-badge'>ISBRA 2024</span> **A Transferability-guided Protein-ligand Interaction Prediction Method**<br>
   _<u><b>Weihong Zhang</b></u>, Fan Hu, Peng Yin, Yunpeng Cai_<br>
