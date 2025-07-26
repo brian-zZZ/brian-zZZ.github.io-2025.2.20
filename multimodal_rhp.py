@@ -1363,3 +1363,115 @@ class CommonSpaceMultimodalLayernormRHPNet3(MultimodalLayernormRHPNet3):
         # sally
         # return input_prd_cat, input_rvw_cat, score, nce
         return input_cat, score, nce, pooling_prd, pooling_rvw
+
+    def forward(self, batch, wo_score=False, target_indices=None):
+        # encode texts
+        prd_txt_attn_mask = generate_seq_mask(batch['text_left_length'], batch['text_left'].size(1)) # torch.Size([32, 120])
+        rvw_txt_attn_mask = generate_seq_mask(batch['text_right_length'], batch['text_right'].size(1)) # torch.Size([32, 128])
+        prd_hidden_vectors = self.lstm_prd_txt_encoder(batch['text_left'], prd_txt_attn_mask) # 获取产品文本的表征 # torch.Size([32, 120, 128])
+        rvw_hidden_vectors = self.lstm_rvw_txt_encoder(batch['text_right'], rvw_txt_attn_mask) # # 获取评论文本的表征 # torch.Size([32, 128, 128])
+
+        if self.use_image:
+            # encode images
+            prd_img_repr, prd_img_unpadding_mask = self.prd_img_encoder(batch['image_left'].float(), batch['image_left_length']) # # 获取产品图片的表征torch.Size([32, 16, 128]),torch.Size([32, 16])
+            rvw_img_repr, rvw_img_unpadding_mask = self.rvw_img_encoder(batch['image_right'].float(), batch['image_right_length']) # # 获取评论图片的表征torch.Size([32, 128, 128]), torch.Size([32, 16])
+
+            prd_img_attn_mask = generate_seq_mask(batch['image_left_length'], batch['image_left'].size(1))
+            rvw_img_attn_mask = generate_seq_mask(batch['image_right_length'], batch['image_right'].size(1))
+
+            # sally修改
+            # 产品的图片文本跨模态输入: prd_txt | prd_img
+            cross_modal_prd_inputs = torch.cat([prd_hidden_vectors, prd_img_repr], 1)
+            cross_modal_prd_mask = torch.cat([prd_txt_attn_mask, prd_img_attn_mask], 1)
+            cross_modal_prd_mask = self.get_cross_attn_mask(cross_modal_prd_mask)
+            cross_modal_prd_inputs = self.cross_modal_self_attn(cross_modal_prd_inputs, cross_modal_prd_mask)
+            # 评论的图片文本跨模态输入: rvw_txt | rvw_img
+            cross_modal_rvw_inputs = torch.cat([rvw_hidden_vectors, rvw_img_repr], 1)
+            cross_modal_rvw_mask = torch.cat([rvw_txt_attn_mask, rvw_img_attn_mask], 1)
+            cross_modal_rvw_mask = self.get_cross_attn_mask(cross_modal_rvw_mask)
+            cross_modal_rvw_inputs = self.cross_modal_self_attn(cross_modal_rvw_inputs, cross_modal_rvw_mask)
+
+            # 返回各自的模态
+            prd_hidden_vectors = cross_modal_prd_inputs[:, :prd_hidden_vectors.size(1),:]
+            prd_img_repr = cross_modal_prd_inputs[:, prd_hidden_vectors.size(1):,:]
+            rvw_hidden_vectors = cross_modal_rvw_inputs[:, :rvw_hidden_vectors.size(1),:]
+            rvw_img_repr = cross_modal_rvw_inputs[:, rvw_hidden_vectors.size(1):,:]
+
+            # ##########################################################################################################################################################################################################################################
+
+            # pooling text
+            pool_rvw_txt_repr = rvw_hidden_vectors
+            pool_prd_txt_repr = prd_hidden_vectors
+
+            # mapping to a common space
+            common_prd_txt_repr = self.txt_linear(pool_prd_txt_repr) # torch.Size([32, 120, 128])
+            common_rvw_txt_repr = self.txt_linear(pool_rvw_txt_repr) # torch.Size([32, 128, 128])
+            common_prd_img_repr = self.img_linear(prd_img_repr) # torch.Size([32, 16, 128])
+            common_rvw_img_repr = self.img_linear(rvw_img_repr) # torch.Size([32, 16, 128])
+
+            coherent_cross_match = self.coherentor(common_rvw_txt_repr, rvw_txt_attn_mask, common_rvw_img_repr, rvw_img_unpadding_mask, common_prd_txt_repr, prd_txt_attn_mask, common_prd_img_repr, prd_img_unpadding_mask) # torch.Size([32, 128])
+
+        # pooling
+        pooling_prd_txt = common_prd_txt_repr.max(1).values # torch.Size([32, 128])
+        pooling_rvw_txt = common_rvw_txt_repr.max(1).values
+        pooling_prd_img = common_prd_img_repr.max(1).values
+        pooling_rvw_img = common_rvw_img_repr.max(1).values
+
+        pooling_prd = torch.cat([pooling_prd_txt, pooling_prd_img], -1) # torch.Size([32, 256])
+        pooling_rvw = torch.cat([pooling_rvw_txt, pooling_rvw_img], -1)
+        
+
+        # 提取评论图片和文本方面的特征的模块
+        # 方面特征提取
+        # sally
+        # rvw_txt_aspattn, rvw_txt_aspects = self.txt_aspects(rvw_hidden_vectors, rvw_txt_attn_mask)
+        # rvw_image_aspattn, rvw_image_aspects = self.image_aspects(rvw_img_repr, rvw_img_attn_mask)
+        # brian: 用mapping到common space的表征
+        rvw_txt_aspattn, rvw_txt_aspects = self.txt_aspects(common_rvw_txt_repr, rvw_txt_attn_mask)
+        rvw_image_aspattn, rvw_image_aspects = self.image_aspects(common_rvw_img_repr, rvw_img_attn_mask)
+
+        # 还需要定义一个信号传输的模块
+        # sally
+        common_prd_repr = torch.cat([common_prd_txt_repr, common_prd_img_repr], 1)
+
+        group_prd_mask = torch.cat([prd_txt_attn_mask, prd_img_attn_mask], 1)
+       
+        # group_txt = self.trans_txt(rvw_txt_aspects, common_prd_repr, cross_modal_prd_mask)
+        # group_image = self.trans_image(rvw_image_aspects, common_prd_repr, cross_modal_prd_mask)
+        # brian: prd为Q，rvw为K、V
+        group_txt = self.trans_txt(common_prd_repr, rvw_txt_aspects, cross_modal_prd_mask)
+        group_image = self.trans_image(common_prd_repr, rvw_image_aspects, cross_modal_prd_mask)
+        pooling_rvw = pooling_rvw.unsqueeze(1) # [32, 1, 256]
+        pooling_prd = pooling_prd.unsqueeze(1)
+        group_pooling = self.trans_pooling(pooling_rvw, pooling_prd, None)  # pooling_rvw[32, 256]
+
+        # context repr
+        contex_repr = []
+        contex_repr.append(group_txt)
+        contex_repr.append(group_image)
+
+        # sally
+        # pooled_prd_txt = prd_hidden_vectors.max(1).values
+        # pooled_rvw_txt = rvw_hidden_vectors.max(1).values
+        # pooled_prd_img = prd_img_repr.max(1).values
+        # pooled_rvw_img = rvw_img_repr.max(1).values
+        # intra_prd_nce = self.contrastive_learning(pooled_prd_txt, pooled_prd_img)
+        # intra_rvw_nce = self.contrastive_learning(pooled_rvw_txt, pooled_rvw_img)
+        # brain: 前面已pooling，不用重新算一份pooling结果
+        intra_prd_nce = self.contrastive_learning(pooling_prd_txt, pooling_prd_img)
+        intra_rvw_nce = self.contrastive_learning(pooling_rvw_txt, pooling_rvw_img)
+        nce = (intra_prd_nce + intra_rvw_nce)/2
+
+        # product category predicting
+        pooling_prd = pooling_prd.squeeze(1) # [32, 256]
+        pooling_rvw = pooling_rvw.squeeze(1)
+        pooling_prd_rvw = torch.cat([pooling_prd, pooling_rvw], dim=-1) # torch.Size([32, 512])
+        input_cat = self.prd_cat_linear(pooling_prd_rvw)
+        flattened = flatten_all(contex_repr)
+        group_pooling = group_pooling.squeeze(1)
+        result = torch.cat(flattened, dim=1)
+        # group_txt | group_image | group_pooling | coherent_cross_match
+        input = torch.cat([result, group_pooling, coherent_cross_match], dim=-1)
+        score = self.linear(input)
+        return input_cat, score, nce, pooling_prd, pooling_rvw
+
